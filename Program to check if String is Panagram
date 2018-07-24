@@ -1,0 +1,39 @@
+import java.util.*;
+public class Panagram{
+    
+    public static boolean isPanagram(String str){
+        boolean flag=false;
+        ArrayList list=new ArrayList();
+        for(int i=97; i<123 ;i++){
+            list.add((char)i);
+        }
+        System.out.println(list);
+        for(int i=0 ; i< str.length();i++){
+            if(Character.isUpperCase(str.charAt(i))){
+            if(list.contains(str.charAt(i))){
+                flag=true;
+            }else{
+                flag=false;
+            }}else{
+                Character.toUpperCase(str.charAt(i));
+                   if(list.contains(str.charAt(i))){
+                flag=true;
+            }else{
+                flag=false;
+            }  
+                }
+            }
+            return flag; 
+        }
+       
+    
+    public static void main(String[] args){
+    String str = "The QUICK BROWN fox jumps my name is rahul over the lazy dog";
+ 
+        if (isPanagram(str) == true)
+            System.out.print(str + " is a pangram.");
+        else
+            System.out.print(str+ " is not a pangram.");
+    }
+    
+}
